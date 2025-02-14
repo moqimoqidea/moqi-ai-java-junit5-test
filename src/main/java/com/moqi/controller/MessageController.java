@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/messages")
 public class MessageController {
 
-    @GetMapping("/hello")
-    public Message getHello() {
-        log.info("Received GET request to /api/messages/hello");
-        Message response = new Message("hello");
+    @GetMapping("/{content}")
+    public Message getMessage(@PathVariable String content) {
+        log.info("Received GET request to /api/messages/{} with path variable", content);
+        Message response = new Message(content);
         log.info("Returning response: {}", response);
         return response;
     }

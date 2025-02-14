@@ -9,7 +9,7 @@ A Spring Boot project demonstrating JUnit 5 testing capabilities.
 
 ## Technology Stack
 
-- Spring Boot 3.2.3
+- Spring Boot 3.4.2
 - JUnit 5
 - Lombok
 - Maven
