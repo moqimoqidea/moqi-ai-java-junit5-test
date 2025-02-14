@@ -36,3 +36,6 @@ buildNumber.properties
 
 ### Mac OS ###
 .DS_Store 
+
+### Database ###
+/db/

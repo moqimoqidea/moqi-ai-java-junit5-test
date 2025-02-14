@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:sqlite:memory:mydb?cache=shared
+    url: jdbc:sqlite:db/memory::mydb?cache=shared
     driver-class-name: org.sqlite.JDBC
     username: sa
     password: sa
