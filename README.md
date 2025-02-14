@@ -38,3 +38,19 @@ To run the tests:
 mvn test
 ```
 
+## API Documentation
+
+### GET
+
+```bash
+curl -X GET http://localhost:8080/api/messages/hello
+```
+
+### POST
+
+```bash
+curl -X POST http://localhost:8080/api/messages \
+  -H "Content-Type: application/json" \
+  -d '{"content": "Hello, World!"}'
+```
+
