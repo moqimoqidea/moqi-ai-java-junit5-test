@@ -54,3 +54,17 @@ curl -X POST http://localhost:8080/api/messages \
   -d '{"content": "Hello, World!"}'
 ```
 
+### DELETE
+
+```bash
+curl -X DELETE http://localhost:8080/api/messages/hello
+```
+
+### PUT
+
+```bash
+curl -X PUT http://localhost:8080/api/messages/hello \
+  -H "Content-Type: application/json" \
+  -d '{"content": "Hello, Updated World!"}'
+```
+

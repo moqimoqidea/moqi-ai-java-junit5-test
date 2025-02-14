@@ -24,4 +24,20 @@ public class MessageController {
         log.info("Returning response: {}", response);
         return response;
     }
+
+    @DeleteMapping("/{content}")
+    public Message deleteMessage(@PathVariable String content) {
+        log.info("Received DELETE request to /api/messages/{} with path variable", content);
+        Message response = new Message("Deleted message: " + content);
+        log.info("Returning response: {}", response);
+        return response;
+    }
+
+    @PutMapping("/{content}")
+    public Message updateMessage(@PathVariable String content, @RequestBody Message message) {
+        log.info("Received PUT request to /api/messages/{} with path variable and body: {}", content, message);
+        Message response = new Message("Updated message from '" + content + "' to '" + message.getContent() + "'");
+        log.info("Returning response: {}", response);
+        return response;
+    }
 } 
