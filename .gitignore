@@ -39,3 +39,6 @@ buildNumber.properties
 
 ### Database ###
 /db/
+
+### Java ###
+.java-version
