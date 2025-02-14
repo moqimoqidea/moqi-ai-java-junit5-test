@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:memory:mydb?cache=shared
+    driver-class-name: org.sqlite.JDBC
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true 
