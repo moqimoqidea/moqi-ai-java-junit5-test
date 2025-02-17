@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/schools")
@@ -22,6 +23,11 @@ public class SchoolController {
         // You can extend this to implement filtering based on criteria
         List<SchoolDTO> schools = schoolService.getAllSchools();
         return ResponseEntity.ok(schools);
+    }
+
+    @GetMapping("/hello")
+    public ResponseEntity<Map<String, String>> queryHello(@RequestBody SchoolDTO criteria) {
+        return ResponseEntity.ok(Map.of("hello", "world"));
     }
 
     @PostMapping
