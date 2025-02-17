@@ -24,6 +24,11 @@ public class SchoolController {
         return ResponseEntity.ok(schools);
     }
 
+    @GetMapping("/hello")
+    public ResponseEntity<Map<String, String>> queryHello(@RequestBody SchoolDTO criteria) {
+        return ResponseEntity.ok(Map.of("hello", "world"));
+    }
+
     @PostMapping
     public ResponseEntity<SchoolDTO> createSchool(@RequestBody SchoolDTO schoolDTO) {
         SchoolDTO created = schoolService.createSchool(schoolDTO);
