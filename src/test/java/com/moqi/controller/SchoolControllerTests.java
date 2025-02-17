@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -48,6 +49,24 @@ class SchoolControllerTests {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(schools, response.getBody());
         verify(schoolService).getAllSchools();
+    }
+
+    @Test
+    void queryHello_WithNullCriteria_ShouldReturnHelloWorld() {
+        ResponseEntity<Map<String, String>> response = schoolController.queryHello(null);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
+        assertEquals("world", response.getBody().get("hello"));
+    }
+
+    @Test
+    void queryHello_WithCriteria_ShouldReturnHelloWorld() {
+        ResponseEntity<Map<String, String>> response = schoolController.queryHello(schoolDTO);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
+        assertEquals("world", response.getBody().get("hello"));
     }
 
     @Test
